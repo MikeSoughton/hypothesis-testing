@@ -8,7 +8,11 @@ Repository for performing hypothesis tests using the outputs of various Machine 
 
 -----------------
 
-The paper demonstrates how to use the outputs of supervised classifiers or unsupervised anomaly detection methods can be used in Log-Likelihood Ratio hypothesis tests and in obtaining discovery significances. We use a CNN trained on QCD and top jet images (in $\eta$-$p_T$ space)Events are generated through [`MadGraph`](https://arxiv.org/abs/1106.0522) along with [`Pythia`](https://arxiv.org/abs/0710.3820) and [`Delphes`](https://arxiv.org/abs/1307.6346) for showering and detector effects. 
+Currently there is much interest in using Machine Learning methods for detecting and identifying signals within HEP. However, little has so far been done towards the seemingly straightforward task of incorporating the results from these methods into statistical tests such as those used for discovery of new particles. Our paper demonstrates how to use the outputs of supervised classifiers or unsupervised anomaly detection methods can be used in Log-Likelihood Ratio hypothesis tests and in obtaining seperation and discovery significances. 
+
+We train a CNN to distinguish between QCD and top jet images (in $\eta$-$p_T$ space) and then use the outputs of the CNN when applied to new data (which are the probabilities of a jet being a top jet) within a Log-Likelihood ratio hypothesis test. In doing so one can assess whether or not the data contains signal events     TOY
+
+Events are generated through [`MadGraph`](https://arxiv.org/abs/1106.0522) along with [`Pythia`](https://arxiv.org/abs/0710.3820) and [`Delphes`](https://arxiv.org/abs/1307.6346) for showering and detector effects. 
 
 Tensorflow etc..
 
