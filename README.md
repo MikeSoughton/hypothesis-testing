@@ -55,6 +55,6 @@ Please cite the paper as follows in your publications if it helps your research:
     volume = "5",
     pages = "050",
     year = "2022"
-}
+    }
 
 ## License
