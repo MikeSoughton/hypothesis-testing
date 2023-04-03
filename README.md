@@ -44,16 +44,17 @@ A section can be referenced through [Section](#section)
 ## Citation
 Please cite the paper as follows in your publications if it helps your research:
 
-    @article{Khosa:2019kxd,
-      author         = "Khosa, Charanjit K. and Sanz, Veronica and Soughton,
-                        Michael",
-      title          = "{WIMPs or else? Using Machine Learning to disentangle LHC
-                        signatures}",
-      year           = "2019",
-      eprint         = "1910.06058",
-      archivePrefix  = "arXiv",
-      primaryClass   = "hep-ph",
-      SLACcitation   = "%%CITATION = ARXIV:1910.06058;%%"
-    }
+    @article{Khosa:2022vxb,
+    author = "Khosa, Charanjit Kaur and Sanz, Veronica and Soughton, Michael",
+    title = "{A simple guide from machine learning outputs to statistical criteria in particle physics}",
+    eprint = "2203.03669",
+    archivePrefix = "arXiv",
+    primaryClass = "hep-ph",
+    doi = "10.21468/SciPostPhysCore.5.4.050",
+    journal = "SciPost Phys. Core",
+    volume = "5",
+    pages = "050",
+    year = "2022"
+}
 
 ## License
