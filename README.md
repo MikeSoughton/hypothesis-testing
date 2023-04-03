@@ -28,7 +28,7 @@ The code is run ...
 
 References, funding and additional info ...
 
-VS is supported by the PROMETEO/2021/083 from Generalitat Valenciana, and by PID2020-113644GB-I00 from the Spanish Ministerio de Ciencia e Innovaci´on. MS acknowledges support by the Data Intensive Science Center in the South East Physics Network (DISCnet), an extension of the STFC, under grant number ST/P006760/1.
+VS is supported by the PROMETEO/2021/083 from Generalitat Valenciana, and by PID2020-113644GB-I00 from the Spanish Ministerio de Ciencia e Innovacion. MS acknowledges support by the Data Intensive Science Center in the South East Physics Network (DISCnet), an extension of the STFC, under grant number ST/P006760/1.
 
 **Bold**
 
