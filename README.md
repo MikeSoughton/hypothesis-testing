@@ -20,6 +20,7 @@ numpy=1.19.1
 scipy=1.5.0
 matplotlib=3.3.1
 seaborn=0.11.0
+keras=2.4.3
 scikit-learn=0.23.2
 scikit-image=0.17.2
 ```
