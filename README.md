@@ -30,13 +30,12 @@ These can be installed manually or via the conda yaml file using
 conda env create --name <env name> -f environment.yml
 ```
 
-Tensorflow etc..
+## Code layout
 
-The paper finds ...
+The code is split into three main directories. The first `jet-cnn` contains code to train the CNN classifer on QCD and top jet images, find the probabilities of new images being either a top or QCD jet and then performs a simple hypothesis test on data which contains a small number of top jets with a dominant QCD background, against data comprised of only a QCD background. This code also supports bootstrapping to gauge the variance in outputs arising from training. 
+
 
 The code does ...
-
-Prerequisities ...
 
 The code is run ...
 
