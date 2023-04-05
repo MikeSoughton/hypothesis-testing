@@ -57,5 +57,6 @@ Please cite the paper as follows in your publications if it helps your research:
     pages = "050",
     year = "2022"
     }
+    
 
-## License
+VS is supported by the PROMETEO/2021/083 from Generalitat Valenciana, and by PID2020-113644GB-I00 from the Spanish Ministerio de Ciencia e Innovacion. MS acknowledges support by the Data Intensive Science Center in the South East Physics Network (DISCnet), an extension of the STFC, under grant number ST/P006760/1.
