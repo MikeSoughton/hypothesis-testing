@@ -16,6 +16,10 @@ We also train an unsupervised VAE on a on the same Standard Model background as 
 
 Events are generated through [`MadGraph`](https://arxiv.org/abs/1106.0522) along with [`Pythia`](https://arxiv.org/abs/0710.3820) and [`Delphes`](https://arxiv.org/abs/1307.6346) for showering and detector effects. 
 
+## Dependencies
+
+The code is run in `python3.8.5`
+
 Tensorflow etc..
 
 The paper finds ...
