@@ -32,8 +32,15 @@ conda env create --name <env name> -f environment.yml
 
 ## Code layout
 
-The code is split into three main directories. The first `jet-cnn` contains code to train the CNN classifer on QCD and top jet images, find the probabilities of new images being either a top or QCD jet and then performs a simple hypothesis test on data which contains a small number of top jets with a dominant QCD background, against data comprised of only a QCD background. This code also supports bootstrapping to gauge the variance in outputs arising from training. 
+The code is split into three main directories. 
 
+The first `jet-cnn` contains code to train the CNN classifer on QCD and top jet images, find the probabilities of new images being either a top or QCD jet and then performs a simple hypothesis test on data which contains a small number of top jets with a dominant QCD background, against data comprised of only a QCD background. This code also supports bootstrapping to gauge the variance in outputs arising from training. 
+
+The second `eft-dnn` does the same but with a DNN classifier using data of $Zh$ decay to $b \bar{b}$ and $\ell^+ \ell^-$ under the Standard Model and udner the SMEFT. The files work in much the same manner as for the CNN classifier since the two methods are essentially analagous. This code also supports bootstrapping to gauge the variance in outputs arising from training. 
+
+The third `eft-vae` 
+
+There is also a fourth directory `misc` which 
 
 The code does ...
 
