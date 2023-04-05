@@ -13,7 +13,22 @@ Events are generated through [`MadGraph`](https://arxiv.org/abs/1106.0522) along
 
 ## Dependencies
 
-The code is run in `python3.8.5`
+The code is run in `python3.8.5`. The following packages are required:
+
+```
+numpy=1.19.1
+scipy=1.5.0
+matplotlib=3.3.1
+seaborn=0.11.0
+scikit-learn=0.23.2
+scikit-image=0.17.2
+```
+
+These can be installed manually or via the conda yaml file using
+
+```
+conda env create --name <env name> -f environment.yml
+```
 
 Tensorflow etc..
 
