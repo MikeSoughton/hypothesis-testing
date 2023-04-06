@@ -36,6 +36,6 @@ To perform the hypothesis test run
 ```
 python jet_llr.py
 ```
-This 
+This reads in the predictions from `cnn_outputs` (which can be produced with or without bootstrapping). It then performs a simple hypothesis test with data that contains only QCD events, or data that contains QCD and top events (mixed with appropriate cross-sections). To do this it samples a number of events from the full reference PDFs for the QCD only and QCD + top mixed cases. The Log-Likelihood Ratio (LLR) is then calculated using the reference PDFs but with evenets actually sampled from either the QCD or mixed case. This is done for many toy experiments to build a distribution of LLRs from which the significance level $\alpha$ and the equivalent number of standard deviations can be found. This is done for a range of detector luminosities and the results are saved to `arrays`.
 
 
