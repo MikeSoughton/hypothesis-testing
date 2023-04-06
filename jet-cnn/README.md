@@ -22,14 +22,20 @@ One can also train the CNN with bootstrapping to account for uncertainties in th
 ```
 python KerasCNN_bootstrap.py
 ```
-This trains the CNN over $N$ bootstraps and now, instead of saving a trained CNN model file, the predictions from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed).
+This trains the CNN over $N$ bootstraps and now, instead of saving a trained CNN model file, the predictions (as well as truth data and training scores) from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed).
 
-Additionally one can run 
+One should then run
 ```
 python bootstrap_analysis.py
 ```
-to return plots which analyse the results from bootstrapping.
+to find the average PDFs of the predictions from bootstrapping which are then saved to `cnn_outputs`. This script also returns plots which analyse the results from bootstrapping.
 
 ### Running the Log-Likelihood Ratio simple hypothesis test
+
+To perform the hypothesis test run
+```
+python jet_llr.py
+```
+This 
 
 
