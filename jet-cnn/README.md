@@ -6,6 +6,12 @@ To train the CNN run
 ```
 python KerasCNN.py
 ```
-This takes in data of QCD and top jet images, stored within `Data/`, and outputs a trained CNN h5 model file within a new directory called `model_cnn`.
+This takes in data of QCD and top jet images, stored within `Data`, and outputs a trained CNN h5 model file within a new directory called `model_cnn`.
 
 To make predictions over new data run
+```
+python predictions.py
+```
+which uses the trained CNN model to find the probability of jet images from the testing data of being a top jet. These probabilities are saved within `cnn_outputs`.
+
+One can also 
