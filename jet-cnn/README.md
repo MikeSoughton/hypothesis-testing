@@ -47,3 +47,7 @@ python naive_pdf_cut_vs_llr_quick_results.py
 The script loads in the arrays previously saved (as well as files containing the probabilities of an event being a top or qcd, as found in `cnn_outputs`, which will be used for calculating the standard significances for comparision). It first calculates the standard significances through obtaining the numbers of top and qcd events that would, on average, be obtained in an experiment at a given luminosity. It does this by considering the PDFs so that cuts can be made on it, if desired. This is done for $S/\sqrt{B}, $S/\sqrt{S+B}$ and the Azimov significance, although they are all essentially equivalent here. Finally the results of $\alpha$ and $n_\sigma$ produced by `jet_llr.py` are loaded in and plotted alongside the standard significances.
 
 ### Additional code
+
+The file `gaussian_smear.py` demonstrates applying a Gaussian smearing to the jet images to simulate noise. This file is not used for anything else and is for producing example plots only.
+
+The file `bootstrap_analysis.py` can be run to view metrics of the bootstrapping performance such as the confidence interval of the accuracy scores from each boostrap and the overall PDFs. This file is otherwise not used for anything else.
