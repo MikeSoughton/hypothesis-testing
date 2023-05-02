@@ -20,14 +20,10 @@ which uses the trained DNN model to find the probability of events within the te
 
 One can also train the DNN with bootstrapping to account for uncertainties in the training process. To do this run
 ```
-python eft_dnn_KerasDNN_bootstrap.py
+python eft_dnn_predictions_bootstrap.py
 ```
-This trains the CNN over $N$ bootstraps and now, instead of saving a trained CNN model file, the predictions (as well as truth data and training scores) from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed).
+This trains the DNN over $N$ bootstraps and now, instead of saving a trained DNN model file, the predictions (as well as truth data and training scores) from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed). It then
 
-One should then run
-```
-python bootstrap_analysis.py
-```
 to find the average PDFs of the predictions from bootstrapping which are then saved to `cnn_outputs`. This script also returns plots which analyse the results from bootstrapping.
 
 ### Running the Log-Likelihood Ratio simple hypothesis test
