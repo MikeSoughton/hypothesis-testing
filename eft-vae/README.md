@@ -2,29 +2,25 @@
 
 The main files within this directory accomplish three main points: training the VAE on SM and SMEFT kinematic data, making predictions on the type of events within new data, and performing a general hypothesis test to ascertain the discovery significance for data which contains SMEFT signals. 
 
-### Training the DNN and making predictions without bootstrapping
+### Training the VAE and finding the reconstruction error without bootstrapping
 
-To train the DNN run 
+To train the VAE run 
 ```
-python eft_KerasCNN.py
+python eft_vae_predictions.py
 ```
-This takes in data of SM and SMEFT kinematic event data, stored within `Data`, and outputs a trained DNN .h5 model file within a new directory called `model_dnn`.
+This takes in data of SM kinematic event data, stored within `Data`, and trains the VAE on this data, which it saves as a .h5 file within `models`. Once the VAE is trained the script will then compute the reconstruction error (as the mean squared error) for new data containing only SM events or new data containing both SM events with some SMEFT signal events. 
 
-To make predictions over new data run
-```
-python eft_dnn_predictions.py
-```
-which uses the trained DNN model to find the probability of events within the testing data of being a SMEFT signal event. These probabilities are saved to a .txt file within the main directory (note that they can then be moved to `dnn_outputs` manually - this proccess should be automated in the future).
+Note that unlike with the supervised training scripts, the predictions are made within the same script here for simplicity's sake. The predictions (i.e. the reconstruction error) are saved as .txt files within `vae_outputs`. 
 
-### Training the DNN and making predictions with bootstrapping
+### Training the VAE and finding the reconstruction error with bootstrapping
 
-One can also train the DNN with bootstrapping to account for uncertainties in the training process. To do this run
+One can also train the VAE with bootstrapping to account for uncertainties in the training process. To do this run
 ```
-python eft_dnn_predictions_bootstrap.py
+python eft_vae_predictions_bootstrap.py
 ```
-This trains the DNN over $N$ bootstraps and now, instead of saving a trained DNN model file, outputs the predictions from each iteration of the bootstrapping are saved to one .txt file within the main directory (note that they can then be moved to `dnn_outputs` manually - this proccess should be automated in the future). Also note that we do not find the average PDF within an analysis file as we did for the jet-cnn (as we mainly did that for analysing the bootstrapping process), instead this whole .txt file is read in by `eft_dnn_lrr.py` which will compute the PDF directly.
+This trains the VAE over $N$ bootstraps and now, instead of saving a trained VAE model file, outputs the predictions from each iteration of the bootstrapping are saved to one .txt file within `vae_outputs`.
 
-### Running the Log-Likelihood Ratio simple hypothesis test
+### Running the Log-Likelihood Ratio general hypothesis test
 
 To perform the hypothesis test run
 ```
