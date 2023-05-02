@@ -2,13 +2,13 @@
 
 The main files within this directory accomplish three main points: training the DNN on SM and SMEFT kinematic data, making predictions on the type of events within new data, and performing a simple hypothesis test to ascertain the significance level at which data can be said to be containing SMEFT signals. 
 
-### Training the CNN and making predictions without bootstrapping
+### Training the DNN and making predictions without bootstrapping
 
-To train the CNN run 
+To train the DNN run 
 ```
-python KerasCNN.py
+python eft_KerasCNN.py
 ```
-This takes in data of QCD and top jet images, stored within `Data`, and outputs a trained CNN .h5 model file within a new directory called `model_cnn`.
+This takes in data of SM and SMEFT kinematic event data, stored within `Data`, and outputs a trained DNN .h5 model file within a new directory called `model_dnn`.
 
 To make predictions over new data run
 ```
