@@ -14,21 +14,15 @@ To make predictions over new data run
 ```
 python eft_dnn_predictions.py
 ```
-which uses the trained DNN model to find the probability of events within the testing data of being a SMEFT signal event. These probabilities are saved (note that they can then be moved manually when needed).
+which uses the trained DNN model to find the probability of events within the testing data of being a SMEFT signal event. These probabilities are saved to a .txt file within the main directory (note that they can then be moved to `dnn_outputs` manually - this proccess should be automated in the future).
 
 ### Training the DNN and making predictions with bootstrapping
 
 One can also train the DNN with bootstrapping to account for uncertainties in the training process. To do this run
 ```
-python eft_dnn_KerasDNN_bootstrap.py
+python eft_dnn_predictions_bootstrap.py
 ```
-This trains the CNN over $N$ bootstraps and now, instead of saving a trained CNN model file, the predictions (as well as truth data and training scores) from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed).
-
-One should then run
-```
-python bootstrap_analysis.py
-```
-to find the average PDFs of the predictions from bootstrapping which are then saved to `cnn_outputs`. This script also returns plots which analyse the results from bootstrapping.
+This trains the DNN over $N$ bootstraps and now, instead of saving a trained DNN model file, outputs the predictions from each iteration of the bootstrapping are saved to one .txt file within the main directory (note that they can then be moved to `dnn_outputs` manually - this proccess should be automated in the future). Also note that we do not find the average PDF within an analysis file as we did for the jet-cnn (as we mainly did that for analysing the bootstrapping process), instead this whole .txt file is read in by `eft_dnn_lrr.py` which will compute the PDF directly.
 
 ### Running the Log-Likelihood Ratio simple hypothesis test
 
