@@ -1,4 +1,4 @@
-## Running jet-cnn code
+## Running eft-dnn code
 
 The main files within this directory accomplish three main points: training the DNN on SM and SMEFT kinematic data, making predictions on the type of events within new data, and performing a simple hypothesis test to ascertain the significance level at which data can be said to be containing SMEFT signals. 
 
