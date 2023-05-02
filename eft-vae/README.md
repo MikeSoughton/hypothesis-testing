@@ -22,11 +22,19 @@ This trains the VAE over $N$ bootstraps and now, instead of saving a trained VAE
 
 ### Running the Log-Likelihood Ratio general hypothesis test
 
-To perform the hypothesis test run
+To perform the general hypothesis test run
 ```
-python eft_dnn_llr.py
+python eft_vae_llr_general.py
 ```
-This reads in the predictions from `dnn_outputs` (which can be produced with or without bootstrapping). It then performs a simple hypothesis test with data that contains only SM background events, or data that contains SM background and SMEFT signal events (mixed with appropriate cross-sections). To do this it samples a number of events from the full reference PDFs for the SM only and SM + SMEFT mixed cases. The Log-Likelihood Ratio (LLR) is then calculated using the reference PDFs but with evenets actually sampled from either the SM or mixed case. This is done for many toy experiments to build a distribution of LLRs from which the significance level $\alpha$ and the equivalent number of standard deviations $n_\sigma$ can be found. This is done for a range of detector luminosities and the results are saved to `arrays`.
+This reads in the predictions from `vae_outputs` (which can be produced with or without bootstrapping). It then performs a generalised hypotheis test by comparing the reconstruction error PDFs that would be obtained with data that contains only SM background events, or data that contains SM background and SMEFT signal events (mixed with appropriate cross-sections). Note that for our generalised hypothesis test we cannot take the signal PDF to be known a-priori, so we take the average LLR value obtained from simulated toy experiments, in a manner similar to before, but then calculate the $p$-value using the (half)$\chi^2_1$ distribution.
+
+### Running the Log-Likelihood Ratio simple hypothesis test (additional code)
+
+One can also perform a simple hypothesis test using the VAE. Doing so kind of defeats the purpose of using a VAE trained without knowledge of the SMEFT signal, but is totally possible to do since we have truth information of the SMEFT. We do not include results from this in the paper, but it can be run here for comparison. To do this run
+```
+python eft_vae_llr_general.py
+```
+This reads in the predictions from `vae_outputs` (which can be produced with or without bootstrapping). It then performs a simple hypothesis test with data that contains only SM background events, or data that contains SM background and SMEFT signal events (mixed with appropriate cross-sections). To do this it samples a number of events from the full reference PDFs for the SM only and SM + SMEFT mixed cases. The Log-Likelihood Ratio (LLR) is then calculated using the reference PDFs but with evenets actually sampled from either the SM or mixed case. This is done for many toy experiments to build a distribution of LLRs from which the significance level $\alpha$ and the equivalent number of standard deviations $n_\sigma$ can be found. This is done for a range of detector luminosities and the results are saved to `arrays`.
 
 ### Viewing results
 
