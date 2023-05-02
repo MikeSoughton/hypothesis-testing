@@ -12,15 +12,15 @@ This takes in data of SM and SMEFT kinematic event data, stored within `Data`, a
 
 To make predictions over new data run
 ```
-python predictions.py
+python eft_dnn_predictions.py
 ```
-which uses the trained CNN model to find the probability of jet images from the testing data of being a top jet. These probabilities are saved within `cnn_outputs`.
+which uses the trained DNN model to find the probability of events within the testing data of being a SMEFT signal event. These probabilities are saved (note that they can then be moved manually when needed).
 
-### Training the CNN and making predictions with bootstrapping
+### Training the DNN and making predictions with bootstrapping
 
-One can also train the CNN with bootstrapping to account for uncertainties in the training process. To do this run
+One can also train the DNN with bootstrapping to account for uncertainties in the training process. To do this run
 ```
-python KerasCNN_bootstrap.py
+python eft_dnn_KerasDNN_bootstrap.py
 ```
 This trains the CNN over $N$ bootstraps and now, instead of saving a trained CNN model file, the predictions (as well as truth data and training scores) from each iteration of the bootstrapping are saved directly to `bootstrap_arrays`. There is therefore no need to run a seperate script for predictions (note that `predictions_from_bootstrap.py` is legacy experimental code and is no longer needed).
 
